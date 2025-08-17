@@ -16,11 +16,18 @@
     "targets": {
       "build":{
         "executor": "@nx/next:build",
+        "outputs": ["{options.outputPath}"],
         "defaultConfiguration":"production",
-        "options": {},
+        "options": {
+          "outputPath": "dist/apps/myapp"
+        },
         "configurations":{
-            "development":{},
-            "production":{}
+            "development":{
+               "outputPath": "dist/apps/myapp"
+            },
+            "production":{
+               "outputPath": "dist/apps/myapp"
+            }
         }
       },
       "serve":{
